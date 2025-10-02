@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph T. - Senior UX Design Leader</title>
+    <meta name="description" content="Joseph T. - Senior Manager UX Design, Research & Strategy with 20+ years experience. HFI-Certified Usability Analyst specializing in enterprise applications and AI-driven design.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#64748b',
+                        'accent': '#f59e0b',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter antialiased bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-gray-900">Joseph T.</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-primary transition-colors">Projects</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-primary transition-colors">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100 hidden">
+            <div class="px-4 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 text-gray-700">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-gray-700">About</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-gray-700">Experience</a>
+                <a href="#projects" class="mobile-nav-link block px-3 py-2 text-gray-700">Projects</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-gray-700">Skills</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-primary/5 via-white to-accent/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="space-y-4">
+                        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Joseph T.
+                        </h1>
+                        <h2 class="text-2xl lg:text-3xl font-semibold text-primary">
+                            Senior Manager – UX Design, Research & Strategy
+                        </h2>
+                        <div class="flex flex-wrap gap-4 text-secondary">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Chennai, India
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-calendar"></i>
+                                20+ Years Experience
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-certificate"></i>
+                                HFI-Certified Usability Analyst
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Creative and impact-driven UX leader with proven expertise in user-centered design, 
+                        UX research, AI-driven tools, and product strategy. Specialized in driving cross-functional 
+                        teams and managing end-to-end project lifecycles for enterprise-grade clients.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                            Get in Touch
+                        </a>
+                        <a href="#projects" class="btn-secondary border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:text-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-tie text-8xl text-white"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                            <i class="fas fa-award text-3xl text-accent"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Transforming complex business challenges into intuitive user experiences through 
+                    strategic design thinking and innovative solutions.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900">Professional Journey</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            With over two decades of experience in UX design and research, I've had the privilege 
+                            of working with Fortune 500 companies and leading global design initiatives. My journey 
+                            spans from hands-on design execution to strategic leadership, managing teams of 30+ designers 
+                            and delivering multi-million dollar projects.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Currently at Cognizant Technology Solutions, I lead UX initiatives for major clients 
+                            including US Bank and World Bank Group, where I've successfully managed $3.5+ million 
+                            in project value and mentored over 40 designers throughout my career.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-semibold text-gray-900">Key Achievements</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span class="text-gray-600">Led 13+ successful projects with zero escalations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span class="text-gray-600">Won 15+ RFPs for World Bank Group with 65% conversion rate</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span class="text-gray-600">Managed and mentored 40+ designers across multiple projects</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-primary mt-1"></i>
+                                <span class="text-gray-600">HFI-Certified Usability Analyst (CUA) certification</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-8" data-aos="fade-left">
+                    <div class="bg-gray-50 rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-6">Leadership Philosophy</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <i class="fas fa-heart text-primary text-2xl mb-2"></i>
+                                <div class="font-medium text-gray-900">Empathy</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <i class="fas fa-lightbulb text-accent text-2xl mb-2"></i>
+                                <div class="font-medium text-gray-900">Innovation</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <i class="fas fa-users text-primary text-2xl mb-2"></i>
+                                <div class="font-medium text-gray-900">Collaboration</div>
+                            </div>
+                            <div class="text-center p-4 bg-white rounded-lg">
+                                <i class="fas fa-rocket text-accent text-2xl mb-2"></i>
+                                <div class="font-medium text-gray-900">Growth</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 text-white">
+                        <h4 class="text-lg font-semibold mb-4">Future Focus</h4>
+                        <p class="text-white/90 leading-relaxed">
+                            Actively exploring AI-enhanced design workflows and human-centered innovations. 
+                            Seeking new challenges in UX consulting, design leadership, or innovation strategy roles 
+                            where I can drive meaningful impact at scale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A journey of continuous growth and impactful contributions across leading technology organizations.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
+                
+                <!-- Experience Items -->
+                <div class="space-y-16">
+                    <!-- Cognizant -->
+                    <div class="relative" data-aos="fade-up">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary rounded-full border-4 border-white"></div>
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div class="lg:text-right space-y-4">
+                                <div class="space-y-2">
+                                    <h3 class="text-2xl font-bold text-gray-900">Sr. Manager – UX Designer, Researcher, and Project Lead</h3>
+                                    <p class="text-primary font-semibold">Cognizant Technology Solutions</p>
+                                    <p class="text-gray-600">Feb 2010 – Present (15 years)</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-6 shadow-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Key Projects & Achievements</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li><strong>US Bank (2025):</strong> Led UX research and audit for document management ecosystem</li>
+                                        <li><strong>Car Configurator (2025):</strong> Spearheaded white-label automotive product development</li>
+                                        <li><strong>Design Studio Revamp (2024):</strong> Improved leadership visibility and employee experience</li>
+                                        <li><strong>Portfolio Workshop (2023):</strong> Led portfolio framework rollout across teams</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-white rounded-lg p-6 shadow-lg">
+                                    <h4 class="font-semibold text-gray-900 mb-4">Impact Metrics</h4>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-primary">$3.5M+</div>
+                                            <div class="text-sm text-gray-600">Project Value</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-primary">40+</div>
+                                            <div class="text-sm text-gray-600">Designers Mentored</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-primary">15+</div>
+                                            <div class="text-sm text-gray-600">RFPs Won</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-primary">65%</div>
+                                            <div class="text-sm text-gray-600">Conversion Rate</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Previous Roles -->
+                    <div class="relative" data-aos="fade-up">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-gray-400 rounded-full border-4 border-white"></div>
+                        <div class="grid lg:grid-cols-2 gap-8 items-center">
+                            <div class="space-y-6">
+                                <div class="bg-white rounded-lg p-6 shadow-lg">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-2">Consim Info Pvt Ltd</h4>
+                                    <p class="text-primary font-semibold mb-1">Sr. Web Designer</p>
+                                    <p class="text-gray-600 mb-4">2006 – 2010 (4 years)</p>
+                                    <p class="text-gray-600 text-sm">Advanced web design and user experience development for enterprise clients.</p>
+                                </div>
+                            </div>
+                            <div class="lg:text-right space-y-6">
+                                <div class="bg-white rounded-lg p-6 shadow-lg">
+                                    <h4 class="text-xl font-bold text-gray-900 mb-2">Xerago E-biz</h4>
+                                    <p class="text-primary font-semibold mb-1">Designer</p>
+                                    <p class="text-gray-600 mb-4">2004 – 2006 (2 years)</p>
+                                    <p class="text-gray-600 text-sm">Creative design solutions for e-commerce and digital platforms.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Showcasing impactful design solutions that drive business results and enhance user experiences.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- World Bank Group -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden" data-aos="fade-up">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center">
+                                <i class="fas fa-globe text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">World Bank Group</h3>
+                                <p class="text-gray-600">Global Design System & Enterprise Applications</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <p class="text-gray-600 leading-relaxed">
+                                Led comprehensive UX design initiatives across IBRD, IFC, and IDA divisions, 
+                                creating scalable design systems and mobile applications that serve millions of users globally.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-white rounded-lg">
+                                    <div class="text-2xl font-bold text-primary">5+ Years</div>
+                                    <div class="text-sm text-gray-600">Project Duration</div>
+                                </div>
+                                <div class="text-center p-4 bg-white rounded-lg">
+                                    <div class="text-2xl font-bold text-primary">6+</div>
+                                    <div class="text-sm text-gray-600">Mobile Apps</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900">Key Achievements:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>Designed comprehensive design system used across all WBG divisions</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>Zero escalations throughout the 5+ year engagement</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>Positive feedback from all stakeholder divisions</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- US Bank -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center">
+                                <i class="fas fa-university text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">US Bank</h3>
+                                <p class="text-gray-600">Document Management & Design Leadership</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <p class="text-gray-600 leading-relaxed">
+                                Currently leading UX research and strategic design initiatives for document management 
+                                ecosystem while managing a team of 30+ designers across multiple project streams.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center p-4 bg-white rounded-lg">
+                                    <div class="text-2xl font-bold text-accent">30+</div>
+                                    <div class="text-sm text-gray-600">Team Members</div>
+                                </div>
+                                <div class="text-center p-4 bg-white rounded-lg">
+                                    <div class="text-2xl font-bold text-accent">2+</div>
+                                    <div class="text-sm text-gray-600">Active Projects</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900">Current Focus:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>Strategic UX research and competitive analysis</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>Design system evolution and component development</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-accent mt-1"></i>
+                                    <span>Team leadership and mentoring initiatives</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Car Configurator -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-xl flex items-center justify-center">
+                                <i class="fas fa-car text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Automotive Configurator</h3>
+                                <p class="text-gray-600">White-label Product Development</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <p class="text-gray-600 leading-relaxed">
+                                Spearheaded the development of a comprehensive white-label automotive product 
+                                from market research to UX delivery, leading cross-functional teams through 
+                                the entire product lifecycle.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900">Project Highlights:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>End-to-end product strategy and implementation</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>Cross-functional team leadership</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-primary mt-1"></i>
+                                    <span>Market research to deployment pipeline</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI & Innovation -->
+                <div class="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-robot text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">AI-Driven Design Innovation</h3>
+                                <p class="text-gray-600">Future-Forward UX Solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <p class="text-gray-600 leading-relaxed">
+                                Pioneering the integration of AI tools and methodologies in design workflows, 
+                                exploring ChatGPT, Midjourney, DALL-E, and ElevenLabs for enhanced 
+                                creative processes and user experiences.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-gray-900">Innovation Areas:</h4>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-500 mt-1"></i>
+                                    <span>AI-enhanced design workflows and automation</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-500 mt-1"></i>
+                                    <span>Human-centered innovation research</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-purple-500 mt-1"></i>
+                                    <span>Future UX methodology development</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    A comprehensive toolkit spanning design, research, leadership, and emerging technologies.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- UX Design & Research -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">UX Design & Research</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Heuristic Evaluation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Persona Creation</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Usability Testing</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Wireframes & Prototypes</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Design Systems</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Leadership & Strategy -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Leadership & Strategy</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Project Management</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Team Mentoring</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Stakeholder Collaboration</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Cross-functional Leadership</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-accent"></i>
+                            <span>Strategic Planning</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- AI & Tools -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-robot text-2xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">AI & Design Tools</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-purple-500"></i>
+                            <span>ChatGPT & AI Integration</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-purple-500"></i>
+                            <span>Midjourney & DALL-E</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-purple-500"></i>
+                            <span>Figma & Adobe XD</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-purple-500"></i>
+                            <span>Adobe Creative Suite</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-purple-500"></i>
+                            <span>Prototyping Tools</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Certifications -->
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Certifications & Education</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-6 bg-gray-50 rounded-xl">
+                        <i class="fas fa-certificate text-3xl text-primary mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">HFI Certified</h4>
+                        <p class="text-sm text-gray-600">Usability Analyst (CUA) - 2023</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl">
+                        <i class="fas fa-graduation-cap text-3xl text-accent mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Advanced Diploma</h4>
+                        <p class="text-sm text-gray-600">Web & E-commerce Technology</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl">
+                        <i class="fas fa-university text-3xl text-primary mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Bachelor's Degree</h4>
+                        <p class="text-sm text-gray-600">Commerce (B.Com)</p>
+                    </div>
+                    <div class="text-center p-6 bg-gray-50 rounded-xl">
+                        <i class="fas fa-brain text-3xl text-purple-500 mb-4"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">AI & Leadership</h4>
+                        <p class="text-sm text-gray-600">Udemy Courses - 2023-2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recognition Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Recognition & Awards</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Honored for exceptional performance and leadership across multiple client engagements.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-6" data-aos="fade-up">
+                    <i class="fas fa-trophy text-3xl text-primary mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Excellence Award</h3>
+                    <p class="text-gray-600 text-sm">Exceptional commitment and contribution to project success</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-accent/5 to-accent/10 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-star text-3xl text-accent mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Client Recognition</h3>
+                    <p class="text-gray-600 text-sm">Positive feedback from US Bank leadership and Sales teams</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-500/5 to-green-500/10 rounded-2xl p-6" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-medal text-3xl text-green-500 mb-4"></i>
+                    <h3 class="font-bold text-gray-900 mb-2">Team Achievement</h3>
+                    <p class="text-gray-600 text-sm">Leading successful project deployments and team celebrations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary/5 via-white to-accent/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Connect</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Ready to discuss your next UX challenge or explore collaboration opportunities? 
+                    I'm always interested in innovative projects and leadership roles.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8" data-aos="fade-right">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Get in Touch</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Whether you're looking for UX consulting, design leadership, or innovation strategy, 
+                                I'd love to hear about your project and discuss how we can create meaningful 
+                                user experiences together.
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+                                <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Location</div>
+                                    <div class="text-gray-600">Chennai, India</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+                                <i class="fas fa-briefcase text-accent text-xl"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Availability</div>
+                                    <div class="text-gray-600">Open to new opportunities</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+                                <i class="fas fa-clock text-primary text-xl"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Response Time</div>
+                                    <div class="text-gray-600">Within 24 hours</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8 shadow-lg" data-aos="fade-left">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" required 
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"></textarea>
+                            </div>
+                            
+                            <button type="submit" 
+                                    class="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-6">
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Joseph T.</h3>
+                    <p class="text-gray-400">Senior Manager – UX Design, Research & Strategy</p>
+                </div>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-behance text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-dribbble text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-6">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Joseph T. All rights reserved. | Crafted with passion for exceptional user experiences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
