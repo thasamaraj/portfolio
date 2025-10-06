@@ -1524,3 +1524,287 @@ h2.section-title,
 
 
 
+.pill.toolbelt{
+  display:flex; flex-wrap:wrap; gap:.5rem;
+  list-style:none; padding:0; margin:0;
+}
+.pill.toolbelt li{
+  padding:.35rem .65rem; border:1px solid #e6e6e6;
+  border-radius:999px; background:#fff; font-size:.9rem;
+}
+.pill.toolbelt li:hover{ transform:translateY(-1px); }
+
+
+
+
+
+
+
+/* === Featured Projects: mobile layout & CTA fix === */
+@media (max-width: 759.98px){
+  /* stop 100vw trick on mobile */
+  .projects-deck .full-bleed{ left:auto; right:auto; margin:0; width:auto; }
+
+  /* let the stage auto-size; no clipping */
+  .projects-deck .slides{ height:auto; overflow:visible; }
+
+  /* stack slides vertically and give them breathing room */
+  .projects-deck .track{
+    display:grid; grid-template-columns: 1fr; gap:16px;
+    transform:none !important;
+  }
+
+  /* slide becomes a natural card with big visual */
+  .projects-deck .slide{
+    position:relative;
+    height:auto;               /* grow to content */
+    border-radius:12px;
+    overflow:hidden;           /* keep image corners rounded */
+    background:#000;
+  }
+
+  /* image becomes a normal block (not absolutely positioned) */
+  .projects-deck .slide .bg{
+    position:relative;
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+  }
+
+  /* put the info panel UNDER the image, like a card */
+  .projects-deck .panel{
+    position:static !important;
+    margin:8px 12px 12px;
+    background:#fff;
+    color:#111;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px 14px;
+  }
+
+  /* CTA wrapper becomes normal flow on mobile */
+  .projects-deck .panel-cta-wrap{
+    position:static; inset:auto; padding:0; pointer-events:auto;
+    display:flex; justify-content:center;
+  }
+  .projects-deck .panel-cta{
+    display:inline-flex; padding:12px 18px;
+    background: var(--brand); color:#111; text-decoration:none;
+    border:1px solid #d6c100; font-weight:800;
+    width:100%; max-width:360px; /* nice big tap target */
+  }
+
+  /* remove dark overlay on small screens */
+  .projects-deck .slide::after{ background:none; }
+
+  /* hide arrows on mobile (already hidden in your CSS, keep it hard-off) */
+  .projects-deck .nav{ display:none !important; }
+}
+
+/* extra spacing below the deck so it never collides with the next section */
+.section.projects-deck{ margin-bottom: clamp(24px, 6vw, 56px); }
+
+
+
+
+/* === Featured Projects — bottom-center overlap CTA (no extra space) === */
+
+/* Ensure the slide clips anything that overflows and sets a stacking context */
+.projects-deck .slide{
+  position: relative;
+  overflow: hidden;              /* prevents the CTA from “bleeding” outside */
+}
+
+/* Always keep the panel absolutely positioned and centered at the bottom */
+.projects-deck .panel{
+  position: absolute !important; /* override any earlier mobile static rules */
+  left: 50%;
+  bottom: clamp(10px, 3vw, 18px);/* sits inside the image, not below it */
+  transform: translateX(-50%);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  z-index: 2;                    /* above the image and fade overlay */
+}
+
+/* No margins/padding that could push layout height */
+.projects-deck .panel-cta-wrap{
+  position: static;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tactile, readable pill */
+.projects-deck .panel-cta{
+  display: inline-flex;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--brand, #FFE500);
+  color: #111;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+/* (Optional) slightly soften the bottom fade so the CTA looks cleaner on top */
+.projects-deck .slide::after{
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.18), transparent 28%),
+    linear-gradient(to top, rgba(0,0,0,.12), transparent 42%);
+}
+
+
+
+
+/* === Fix: Mobile CTA bottom-center overlap on banner === */
+@media (max-width: 759.98px){
+
+  /* Give the slide a real height so the overlay has a stage */
+  .projects-deck .slide{
+    position: relative;
+    height: clamp(320px, 65vh, 520px) !important;
+    overflow: hidden;
+  }
+
+  /* Make the banner image fill the slide */
+  .projects-deck .slide .bg{
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Keep the CTA panel over the image at bottom-center */
+  .projects-deck .panel{
+    position: absolute !important;   /* override earlier 'static !important' */
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    z-index: 3;
+  }
+
+  /* Center the button; ensure it’s interactive */
+  .projects-deck .panel-cta-wrap{
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    pointer-events: auto !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .projects-deck .panel-cta{
+    position: relative;      /* allows z-index on the button */
+    z-index: 4;
+    display: inline-flex;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: var(--brand, #FFE500);
+    color: #111;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+  }
+
+  /* Keep the fade below the CTA */
+  .projects-deck .slide::after{
+    z-index: 1;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.18), transparent 28%),
+      linear-gradient(to top, rgba(0,0,0,.10), transparent 40%);
+  }
+}
+
+
+
+
+
+/* Bottom-center CTA utility for banners */
+.panel-cta-bottom{
+  align-items: flex-end;      /* push CTA to bottom */
+  justify-content: center;    /* center horizontally */
+  padding-bottom: 16px;       /* breathing room from edge */
+}
+
+/* Ensure mobile shows the CTA over the image */
+@media (max-width: 759.98px){
+  .projects-deck .slide{
+    position: relative;
+    height: clamp(320px, 65vh, 520px);
+    overflow: hidden;
+  }
+  .projects-deck .slide .bg{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* === Hero (mobile tweaks) === */
+@media (max-width: 759.98px){
+
+  /* 1) Hide the lede paragraph on mobile */
+  .hero-banner .lede{
+    display: none !important;
+  }
+
+  /* 2) Narrow the hero content container to ~75% and center it */
+  /* Targets common wrappers — whichever exists will take effect */
+  .hero-banner .hero-inner,
+  .hero-banner .content,
+  .hero-banner .content-wrap{
+    width: min(75vw, 768px);   /* ~75% of viewport, capped so it feels like desktop scale */
+    margin-inline: auto;       /* centered */
+    padding-inline: 12px;      /* a little breathing room */
+    text-align: center;        /* optional: center text/buttons */
+  }
+
+  /* 3) Stack CTAs vertically (one below another) */
+  .hero-banner .cta-row,
+  .hero-banner .cta-wrap,
+  .hero-banner .panel-cta-wrap{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;                 /* space between buttons */
+  }
+
+  /* Make each CTA a wide, tappable pill */
+  .hero-banner .cta-row a,
+  .hero-banner .cta-wrap a,
+  .hero-banner .panel-cta{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 360px;          /* keeps a nice button width */
+  }
+}
+
+
+
+/* Center the Quick facts row in the HERO */
+.hero-banner .meta-list{
+  justify-content: center;   /* center the flex children */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;        /* keep text centered when items wrap */
+}
+.hero-banner .meta-list li{
+  justify-content: center;   /* center icon + text inside each pill */
+}
