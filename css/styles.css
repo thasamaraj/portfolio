@@ -1808,3 +1808,28 @@ h2.section-title,
 .hero-banner .meta-list li{
   justify-content: center;   /* center icon + text inside each pill */
 }
+
+
+
+/* === Mobile: keep "View case study" on one line and widen the button === */
+@media (max-width: 759.98px){
+  /* Let the CTA grow, don't cap too small, and prevent wrapping */
+  .projects-deck .panel-cta{
+    width: auto;                         /* don't force 100% width */
+    max-width: min(90vw, 440px);         /* wider button on small screens */
+    white-space: nowrap;                 /* keep the label on one line */
+    padding: 12px 24px;                  /* a bit more breathing room */
+    line-height: 1.15;
+    font-size: clamp(14px, 3.7vw, 16px); /* scale font for tiny devices */
+    letter-spacing: 0;                   /* avoid extra-wide text on mobile */
+    text-transform: none;                /* remove uppercase widening, if any */
+    box-sizing: border-box;
+  }
+
+  /* Ensure the wrapper doesn't constrain the button */
+  .projects-deck .panel-cta-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
