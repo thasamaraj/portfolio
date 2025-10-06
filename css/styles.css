@@ -1,0 +1,1526 @@
+/* Minimal, no-JS, mobile-first styles */
+:root{
+  --bg:#f6f6f6;
+  --card:#ffffff;
+  --ink:#111111;
+  --muted:#555555;
+  --brand:#FFE500;
+  --border:#e8e8e8;
+  --content:1024px;
+}
+
+:root{
+  --font-sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-serif: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+}
+
+:root{
+  --font-base: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+}
+
+/* Use Roboto Slab everywhere by default */
+html, body { font-family: var(--font-base); }
+
+/* Make form controls and buttons inherit the font */
+button, input, select, textarea { font: inherit; }
+
+/* Make sure nav + brand inherit (overrides any old rules) */
+.nav-desktop a,
+.nav-mobile > summary,
+.nav-mobile .sheet a,
+.brand-name,
+.btn { font-family: inherit; }
+
+
+
+/* Headings & site name use Roboto Slab */
+h1, h2, h3, h4,
+.brand-name {
+  font-family: var(--font-serif);
+}
+
+/* Optional weights if you want stronger headings */
+h1 {
+  font: size 14.2em;
+}
+h2, h3 { font-weight: 600; }
+h4 { font-weight: 600; }
+
+
+/* Reset & base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:Roboto,Inter,system-ui,-apple-system,Segoe UI,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+img,video{max-width:100%;height:auto;display:block}
+
+/* Containers */
+.container{
+  max-width:var(--content);
+  margin-inline:auto;
+  padding:20px 16px;
+}
+.container.wide{ max-width:1024px; }
+
+/* Header */
+.site-header{
+  position:sticky; top:0; z-index:10;
+  background:#F5F5F5; border-bottom:1px solid var(--border);
+}
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding-top:16px; padding-bottom:16px;
+}
+.brand{ display:flex; align-items:center; gap:10px; }
+.avatar{ display:grid; place-items:center; width:34px; height:34px; border-radius:999px; background:var(--brand); font-weight:700; }
+.brand-name{ text-decoration:none; color:var(--ink); font-weight:700; font-size:1.05rem; }
+
+/* Nav */
+.nav-desktop{ display:none; }
+.nav-desktop a{ color:#333; text-decoration:none; padding:8px 16px; }
+.nav-desktop a:hover{ background:#fff; }
+
+/* Mobile nav with <details> */
+.nav-mobile{ position:relative; }
+.nav-mobile > summary{
+  list-style:none; cursor:pointer; user-select:none;
+  padding:8px 12px; border:1px solid var(--border); border-radius:8px;
+  background:#fff; font-weight:600;
+}
+.nav-mobile > summary::-webkit-details-marker{ display:none; }
+.nav-mobile[open] > summary{ background:#f7f7f7; }
+.nav-mobile .sheet{
+  position:absolute; right:0; top:calc(100% + 8px); min-width:220px;
+  background:#fff; border:1px solid var(--border); border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08); padding:8px; display:flex; flex-direction:column; gap:4px;
+}
+.nav-mobile .sheet a{
+  text-decoration:none; color:#222; padding:10px 12px; border-radius:8px;
+}
+.nav-mobile .sheet a:hover{ background:#f7f7f7; }
+
+/* Desktop breakpoint */
+@media (min-width:900px){
+  .nav-mobile{ display:none; }
+  .nav-desktop{ display:flex; gap:12px; align-items:center; }
+}
+
+/* Sections */
+.section{ margin-block:18px; }
+.card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; }
+.hero{ border-left:8px solid var(--brand); }
+.subtitle{ font-weight:600; color:#333; margin-top:6px; }
+.meta{ color:var(--muted); font-size:.95rem; font-weight:bolder;}
+.lede{ margin-top:8px; max-width:70ch; }
+.cta-row{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap; }
+@media (max-width:599px){
+  .cta-row .btn{ width:100%; }
+}
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:10px 16px; background:#fff; color:#222;
+  text-decoration:none; font-weight:600; min-height:44px; /* touch target */}
+.btn:hover{ background:#f7f7f7; }
+.btn.primary{ background:var(--brand); border-color:#d6c100; }
+.btn.primary:hover{ filter:brightness(0.98); }
+.btn.block{ width:100%; }
+
+/* Grids */
+.grid{ display:grid; gap:16px; }
+.grid.two{ grid-template-columns:1fr; }
+.grid.three{ grid-template-columns:1fr; }
+.grid.cards{ grid-template-columns:1fr; }
+@media (min-width:760px){
+  .grid.two{ grid-template-columns:1fr 1fr; }
+  .grid.three{ grid-template-columns:repeat(3,1fr); }
+  .grid.cards{ grid-template-columns:repeat(2,1fr); }
+}
+@media (min-width:1100px){
+  .grid.cards{ grid-template-columns:repeat(3,1fr); }
+}
+
+/* Project cards */
+.project .tagline{ color:#444; font-weight:600; margin-top:-6px; }
+.inline-badges{ display:flex; gap:8px; padding:0; margin:6px 0 12px; list-style:none; flex-wrap:wrap; }
+.inline-badges li{ background:#f2f2f2; border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:.9rem; }
+
+/* Experience */
+.exp header .org{ color:#333; font-weight:600; }
+.exp header .time{ color:var(--muted); font-size:.95rem; }
+.metrics{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.metric{ background:#fafafa; border:1px solid var(--border); border-radius:12px; padding:12px; text-align:center; }
+.metric span{ display:block; font-size:1.25rem; font-weight:800; }
+.metric small{ color:var(--muted); }
+
+/* Lists */
+ul{ padding-left:1.2rem; }
+ul.check{ list-style: none; padding-left: 0; }
+ul.check li{ padding-left: 28px; position: relative; margin: 6px 0; }
+ul.check li::before{
+  content: '✓'; position: absolute; left: 0; top: 0; color: #0a7f2e;
+  background:#e8f6ed; width:20px; height:20px; border-radius:999px; display:grid; place-items:center; font-size:.8rem;
+}
+ul.pill{ list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+ul.pill li{ padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#fafafa; }
+
+/* Contact */
+.contact-list{ list-style:none; padding-left:0; }
+.contact-actions{ display:flex; flex-direction:column; gap:10px; }
+
+/* Footer */
+.site-footer{ background:#111; color:#eee; margin-top:12px; }
+.site-footer .container{ display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.site-footer .legal{ color:#bbb; font-size:.9rem; }
+
+/* Anchor offset so sticky header doesn't cover headings */
+:target{ scroll-margin-top: 80px; }
+
+/* Focus styles */
+a:focus-visible, button:focus-visible, summary:focus-visible{ outline:3px solid #005fcc; outline-offset:2px; }
+h1,h2,h3,h4{ line-height:1.3; }
+
+
+
+
+
+/* Header stays low z-layer */
+.site-header{ z-index: 10; }
+
+/* Modal sits above everything */
+.modal{
+  position: fixed;
+  inset: 0;                          /* full viewport */
+  z-index: 9999;                     /* higher than header */
+  background: rgba(0,0,0,.65);
+  opacity: 0;
+  pointer-events: none;              /* hidden by default */
+}
+.modal:target{
+  opacity: 1;
+  pointer-events: auto;              /* clickable when open */
+}
+
+/* Backdrop covers entire viewport */
+.modal-bg{
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Dialog */
+.modal-dialog{
+  position: relative;
+  z-index: 10000;                    /* sits above backdrop */
+  max-width: min(92vw, 720px);
+  margin: min(8vh, 64px) auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.modal-dialog img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Close button */
+.modal-close{
+  position: absolute; top: 6px; right: 10px;
+  width: 36px; height: 36px;
+  border-radius: 9999px;
+  display: grid; place-items: center;
+  text-decoration: none; color: #000; font-size: 22px; font-weight: 700;
+  background: #fff; border: 1px solid var(--border);
+}
+
+/* Optional: prevent background scroll when modal is open (modern browsers) */
+body:has(.modal:target){ overflow: hidden; }
+
+
+
+
+
+
+/* Keep this in sync with your header padding */
+:root { --header-pad-y: 24px; }                 /* header vertical padding */
+
+/* Make sure header uses the variable */
+.site-header .container {
+  padding-block: var(--header-pad-y);
+}
+
+/* Base nav link */
+.nav-desktop a{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 10px;          /* for hover */
+  z-index: 0;                   /* so the bg goes behind text */
+  text-decoration: none;
+  color: #333;
+}
+
+/* Hover (optional) */
+.nav-desktop a:hover { background: #f1f1f1; }
+
+/* ACTIVE: full-height pill that spans the header from top to bottom */
+.nav-desktop a.active{
+  color: #000;
+  font-weight: 700;
+}
+.nav-desktop a.active::before{
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(-1 * var(--header-pad-y));   /* extend to header top */
+  bottom: calc(-1 * var(--header-pad-y));/* extend to header bottom */
+  background: var(--brand);
+  z-index: -1;                            /* behind the text */
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   HERO with full-bleed video
+   ============================ */
+
+/* Break out of the .container to span the viewport */
+.full-bleed{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+/* Section frame */
+.hero-banner{
+  position: relative;
+  min-height: clamp(480px, 75vh, 920px); /* adjust to taste; 100vh if you want full screen */
+  display: grid;
+  place-items: center;
+  isolation: isolate; /* keeps overlay layers contained */
+  color: #fff;
+}
+
+/* BG video covers section */
+.hero-video{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Readability overlay (top dark, bottom softer) */
+.hero-scrim{
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.25) 35%, rgba(0,0,0,.35) 100%),
+    rgba(0,0,0,.05);
+  z-index: -1;
+}
+
+/* 1024px constrained content */
+.hero-inner{
+  max-width: var(--content, 1024px);
+  width: 100%;
+  margin-inline: auto;
+  padding: 48px 16px;
+}
+
+/* Typography on dark BG */
+.hero-inner .subtitle{ color: #f0f0f0; }
+.hero-inner .meta{ color: #e0e0e0; }
+
+/* Buttons on dark */
+.hero-inner .btn{ background: #fff; color: #111; border-color: #dedede; }
+.hero-inner .btn:hover{ background:#f7f7f7; }
+.hero-inner .btn.primary{ background: var(--brand); }
+
+/* ====== Carousel scaffolding (no animation; instant switch) ====== */
+.hero-slides{ overflow: hidden; }
+.hero-track{
+  display: flex;
+  width: 100%;
+  transform: translateX(0%); /* default shows first slide */
+}
+.hero-slide{
+  flex: 0 0 100%;
+  padding: 0; /* content already has spacing via .hero-inner */
+}
+
+/* When you enable multiple slides later, uncomment radios in HTML
+   and these selectors will shift the track instantly */
+#hero-1:checked ~ .hero-inner .hero-track{ transform: translateX(0%); }
+#hero-2:checked ~ .hero-inner .hero-track{ transform: translateX(-100%); }
+#hero-3:checked ~ .hero-inner .hero-track{ transform: translateX(-200%); }
+
+/* Dots (enable later with radios) */
+.hero-dots{
+  display: flex; gap: 8px; margin-top: 16px;
+  justify-content: center; user-select: none;
+}
+.hero-dots label{
+  cursor: pointer; font-size: 28px; line-height: 1;
+  color: #fff; opacity: .6;
+}
+#hero-1:checked ~ .hero-inner .hero-dots label[for="hero-1"],
+#hero-2:checked ~ .hero-inner .hero-dots label[for="hero-2"],
+#hero-3:checked ~ .hero-inner .hero-dots label[for="hero-3"]{ opacity: 1; }
+
+/* Mobile data/battery: hide video and use poster image if wanted */
+@media (max-width: 520px){
+  /* If you want to save data on small screens, uncomment:
+  .hero-video{ display: none; }
+  .hero-banner{
+    background: url("./media/hero-poster.jpg") center / cover no-repeat;
+  }
+  */
+}
+
+/* Accessibility: motion-sensitive users get static image */
+@media (prefers-reduced-motion: reduce){
+  .hero-video{ display: none; }
+  .hero-banner{
+    background: url("./media/hero-poster.jpg") center / cover no-repeat;
+  }
+}
+
+
+
+
+
+/* 1) Remove vertical padding inside MAIN so hero touches the header */
+main.container { 
+  padding-block: 0;                 /* no top/bottom padding in main */
+}
+
+/* 2) Kill the default gaps between sections/cards */
+.section { 
+  margin-block: 0;                  /* no space above/below each section */
+}
+
+/* 3) Make sure the very first block in main never adds its own top margin */
+main.container > *:first-child { 
+  margin-top: 0 !important; 
+}
+
+/* 4) Hero banner: ensure no external offset */
+.hero-banner { 
+  margin-top: 0; 
+}
+
+/* Optional: if you still see a thin line, that's the header border.
+   Uncomment to remove the line entirely:
+.site-header { border-bottom: none; }
+*/
+
+
+/* Section spacing system */
+:root { --section-gap: 32px; }   /* adjust to 24/40/etc. if you want */
+
+/* 1) No top padding for main so hero touches the header */
+main.container {
+  padding-top: 0;
+  padding-bottom: var(--section-gap);
+}
+
+/* 2) Regular spacing for all sections */
+.section {
+  margin: var(--section-gap) 0;
+}
+
+/* 3) Hero: no space on top, but keep space below */
+.hero-banner {
+  margin-top: 0;
+  margin-bottom: var(--section-gap);
+}
+
+/* (Optional) if you previously had this, remove it to avoid killing spacing:
+   .section { margin-block: 0; }
+   main.container > *:first-child { margin-top: 0 !important; }
+*/
+
+
+
+/* Extra-large hero heading only */
+.hero-banner h1{
+  font-size: clamp(2.5rem, 6vw + 0.25rem, 4.25rem); /* ~40px → 68px */
+  font-weight: 700;
+  margin-top: 0;
+}
+
+/* Make the hero subtitle even larger than the rest */
+.hero-banner .subtitle{
+  color:#FFE500;
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 1.9rem); /* ~20 → 30.4px */
+  line-height: 1.25;
+  margin-top: 8px;
+}
+
+
+
+/* Tighten heading stack */
+h1{
+  margin-top: 0;
+  margin-bottom: 4px;    /* reduce gap below the H1 */
+  line-height: 1.1;      /* crisper with Roboto Slab */
+  font-weight: 700;
+}
+
+/* Subtitle sits closer to H1 */
+.subtitle{
+  margin-top: 0;         /* remove extra top gap */
+  /* keep your font-size settings from before; only spacing changed */
+}
+
+/* (Optional) hero-specific even tighter stack */
+.hero-banner h1{ margin-bottom: 2px; }
+.hero-banner .subtitle{ margin-top: 0; }
+
+
+:root{
+  --font-base: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+}
+
+/* Apply globally */
+html, body { font-family: var(--font-base); }
+
+/* Ensure UI elements and nav inherit (some browsers default to system fonts) */
+button, input, select, textarea { font: inherit; }
+
+/* Force header/menu & buttons to use Roboto Slab */
+.brand-name,
+.nav-desktop a,
+.nav-mobile > summary,
+.nav-mobile .sheet a,
+.btn { font-family: var(--font-base) !important; }
+
+
+
+
+/* Iconed meta list */
+.meta-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  margin: 8px 0 0; /* sits close under subtitle */
+  padding: 0;
+  list-style: none;
+  color: inherit; /* inherit text color (white on hero, dark elsewhere) */
+}
+.meta-list li{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.meta-list .icon{
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-block;
+}
+
+/* If you previously styled .meta text color, carry it over */
+.hero-banner .meta-list{ color: #e0e0e0; }
+
+
+
+
+
+
+
+
+/* Center the entire About header block */
+.about .about-head{
+  text-align: center;
+}
+
+/* Keep tagline readable and centered */
+.about .about-head .tagline{
+  max-width: 70ch;
+  margin: 6px auto 0;  /* top spacing + centered */
+}
+
+/* Center the facts row (icons + text) */
+.about .about-head .meta-list{
+  justify-content: center;   /* centers the flex row */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* (Optional) tighten spacing between items a touch */
+.about .about-head .meta-list{
+  gap: 10px 14px;             /* row-gap | column-gap */
+}
+
+/* Ensure each fact item aligns its icon+text nicely */
+.about .about-head .meta-list li{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+
+
+
+/* Remove white background + border from all sections using .card */
+.card,
+.section.card {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;   /* no rounded corners since bg is gone */
+  /* keep padding; change if you want it tighter: */
+  /* padding: 0; */
+}
+
+
+/* Re-enable the white card where you explicitly want it */
+.card.frame{
+  background: #fff !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  padding: 24px;
+}
+
+
+
+
+
+
+
+
+
+/* Future Focus & Impact — shared callout look */
+.future-callout,
+.impact-callout{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255,229,0,0.18), rgba(255,229,0,0.10));
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  border-left: 8px solid var(--brand);
+}
+
+/* Icon circle */
+.future-icon,
+.impact-icon{
+  flex: 0 0 auto;
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.55);
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.future-icon svg,
+.impact-icon svg{ width: 22px; height: 22px; }
+
+/* Headings inside callouts */
+.future-content h4,
+.impact-content h4{
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Impact callout: tidy the metrics grid inside */
+.impact-callout .metrics-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.impact-callout .metric{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px; text-align:center;
+}
+.impact-callout .metric span{ display:block; font-size:1.15rem; font-weight:800; }
+.impact-callout .metric small{ color:var(--muted); }
+
+/* Mobile stacking */
+@media (max-width: 600px){
+  .future-callout,
+  .impact-callout{ flex-direction: column; }
+  .future-icon,
+  .impact-icon{ width: 36px; height: 36px; }
+}
+
+
+
+
+/* More space between the two About columns */
+.about .about-body{
+  /* vertical gap when stacked on mobile, horizontal gap on desktop */
+  row-gap: 16px;         /* space between rows (mobile) */
+  column-gap: 56px;      /* space between the two columns (desktop) */
+}
+
+/* If you want even more on wider screens, bump it here */
+@media (min-width: 1000px){
+  .about .about-body{ column-gap: 72px; }
+}
+
+
+
+/* Smaller chips in Future Focus callout */
+.future-tags { gap: 6px; }  /* tighter spacing between chips */
+
+.future-tags li{
+  font-size: 0.8rem;        /* ↓ was ~1rem; make smaller */
+  line-height: 1.2;
+  padding: 4px 8px;         /* ↓ was 6px 10px; make chip smaller */
+  border-radius: 999px;     /* keep pill shape */
+  font-weight: 200;         /* optional: keep them readable; drop to 500 if you want lighter */
+}
+
+/* If you want them even smaller on mobile */
+@media (max-width: 480px){
+  .future-tags li{
+    font-size: 0.85rem;
+    padding: 3px 7px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================
+   Professional Experience section
+   ================================ */
+
+/* Header centered */
+.experience .exp-head{
+  text-align: center;
+}
+.experience .exp-tagline{
+  max-width: 70ch;
+  margin: 6px auto 0;
+  color: #444;
+}
+
+/* Layout: timeline + metrics */
+.exp-wrap{
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 960px){
+  .exp-wrap{
+    grid-template-columns: 1.6fr 1fr; /* left timeline wider */
+    gap: 28px;
+    align-items: start;
+  }
+}
+
+/* Timeline column */
+.timeline-col{ position: relative; }
+
+/* Timeline list: no bullets; vertical line via each entry */
+.timeline{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each entry aligns its dot + line + content */
+.entry{
+  position: relative;
+  padding-left: 40px;    /* space for dot/line */
+  padding-bottom: 22px;  /* space before next entry */
+}
+
+/* Connector line segment (extends down from this entry's dot) */
+.entry::before{
+  content: "";
+  position: absolute;
+  left: 16px;            /* aligns with dot center */
+  top: 16px;             /* from dot center */
+  bottom: -6px;          /* extend a little past to connect */
+  width: 2px;
+  background: var(--border);
+}
+.entry:last-child::before{
+  bottom: 0;             /* end the line at the last entry */
+}
+
+/* Dot */
+.dot{
+  position: absolute;
+  left: 9px;             /* dot center aligns to line (left + radius) */
+  top: 8px;
+  width: 14px; height: 14px;
+  border-radius: 999px;
+  background: var(--brand);
+  box-shadow: 0 0 0 3px #fff;  /* halo for contrast on light bg */
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Entry content */
+.role{
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+  font-weight: 700;
+}
+.meta-line{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.meta-line .org{ font-weight: 600; }
+.bullets{ margin: 0; padding-left: 1.1rem; }
+
+/* Metrics column */
+.metrics-col{
+  /* Stick near the middle of the viewport on wide screens */
+  position: relative;
+}
+@media (min-width: 960px){
+  .metrics-col{
+    position: sticky;
+    top: clamp(72px, 22vh, 160px); /* feels middle-ish; clears sticky header */
+  }
+}
+
+/* Metrics card styling (independent of .card) */
+.metrics-card{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.metrics-card h4{
+  margin: 0 0 10px 0;
+}
+.metrics-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.metric{
+  background:#fafafa; border:1px solid var(--border); border-radius:12px;
+  padding:12px; text-align:center;
+}
+.metric span{ display:block; font-size:1.25rem; font-weight:800; }
+.metric small{ color:var(--muted); }
+
+/* Spacing tune */
+@media (min-width: 1100px){
+  .entry{ padding-bottom: 28px; }
+}
+
+
+
+
+/* White card styling just for the Experience section */
+.section.experience{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;               /* inner space so content doesn't touch edges */
+}
+
+/* Optional: a soft lift */
+.section.experience{
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* (Optional) a bit more breathing room on larger screens */
+@media (min-width: 1000px){
+  .section.experience{ padding: 28px; }
+}
+
+
+
+
+
+
+/* === Experience: 50/50 columns with equal spacing === */
+:root{ --exp-gap: 40px; }  /* set your preferred column gap */
+
+.exp-wrap{
+  display: grid;
+  gap: var(--exp-gap);
+}
+
+/* Desktop/tablet: perfect 50/50 split */
+@media (min-width: 960px){
+  .exp-wrap{
+    grid-template-columns: 1fr 1fr;   /* 50% / 50% */
+  }
+
+  /* Remove divider/padding so spacing is symmetrical */
+  .metrics-col{
+    border-left: none;
+    padding-left: 0;
+  }
+  .timeline-col{
+    padding-right: 0;
+  }
+
+  /* Keep sticky behavior if you like */
+  .metrics-col{ position: sticky; top: clamp(72px, 22vh, 160px); }
+}
+
+/* Mobile: single column, no extra separators */
+@media (max-width: 959.98px){
+  .metrics-col{
+    border-left: none;
+    border-top: none;
+    padding-left: 0;
+    padding-top: 0;
+    margin-top: 0;
+  }
+}
+
+/* Ensure inner blocks don't add random outer margins */
+.impact-callout{ margin: 0; width: 100%; }
+.entry .content{ margin: 0; }
+
+/* Optional: unify inner padding if you want them to feel identical */
+.entry .content,
+.impact-callout{ padding: 16px; }
+
+
+
+
+
+
+
+:root{
+  --banner-h-min: 420px;
+  --banner-h-fluid: 54vw;
+  --banner-h-max: 600px;
+}
+
+
+/* Projects — Full-bleed deck with JS arrows */
+
+.projects-deck .projects-head{
+  text-align:center;
+  margin-bottom:12px;
+}
+.projects-deck .projects-tagline{
+  max-width:70ch; margin:6px auto 0; color:#444;
+}
+
+/* Full-bleed wrapper (bg spans viewport width) */
+.full-bleed{
+  position:relative;
+  left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw;
+  width:100vw;
+}
+
+/* Constrain content and arrows to 1024px */
+.deck-inner{
+  max-width:var(--content,1024px);
+  width:100%; height:100%;
+  margin:0 auto; position:relative;
+  padding-inline:16px;
+}
+
+/* Stage */
+.projects-deck .slides{
+  position:relative;
+  overflow:hidden;               /* no inch-by-inch scroll */
+  height: clamp(320px, 46vw, 420px);
+}
+
+/* Track + slides */
+.projects-deck .track{
+  display:flex; width:100%; height:100%;
+  transform: translateX(0);
+  transition: transform 360ms ease-out;  /* smooth step */
+  list-style:none; margin:0; padding:0; /* remove 1/2/3 numbers & left indent */
+}
+@media (prefers-reduced-motion: reduce){
+  .projects-deck .track{ transition:none; }
+}
+
+.projects-deck .slide{
+  position:relative;
+  flex:0 0 100vw;                 /* each slide = full viewport width */
+  height:100%; background:#000;
+}
+.projects-deck .slide .bg{
+  position:absolute; inset:0;
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* Content panel */
+.projects-deck .panel{
+  position:absolute; top:16px; left:16px; right:16px;
+  background: rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:12px; color:#fff; padding:12px 14px;
+}
+.projects-deck .panel h3{ margin:0 0 4px 0; line-height:1.2; font-weight:700; }
+.projects-deck .panel .desc{ margin:0 0 8px 0; line-height:1.45; }
+
+/* Info blocks */
+.projects-deck .meta3{ display:grid; gap:10px; grid-template-columns:1fr; }
+.projects-deck .meta3 h4{ margin:0 0 2px 0; line-height:1.2; font-weight:700; font-size:1rem; }
+.projects-deck .meta3 p{ margin:0; line-height:1.4; font-size:.95rem; }
+@media (min-width:680px){ .projects-deck .meta3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1000px){ .projects-deck .meta3{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* Subtle readability fade */
+.projects-deck .slide::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.25), transparent 30%),
+    linear-gradient(to top, rgba(0,0,0,.15), transparent 35%);
+  pointer-events:none;
+}
+
+/* Arrows anchored to the deck, aligned to 1024px inner width */
+.projects-deck .nav{ position:absolute; inset:0; pointer-events:none; }
+.projects-deck .nav .deck-inner{ height:100%; }
+.projects-deck .arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; display:grid; place-items:center;
+  pointer-events:auto; cursor:pointer;
+  border-radius:999px; background:rgba(255,255,255,.95);
+  border:1px solid var(--border); color:#000; font-size:28px; font-weight:700;
+}
+.projects-deck .arrow.prev{ left:-20px; }
+.projects-deck .arrow.next{ right:-20px; }
+
+/* Mobile: stack slides, hide arrows */
+@media (max-width: 759.98px){
+  .projects-deck .full-bleed{ left:auto; right:auto; margin:0; width:auto; }
+  .projects-deck .slides{ height:auto; overflow:visible; }
+  .projects-deck .track{
+    display:grid; grid-template-columns:1fr; gap:12px; transform:none !important;
+  }
+  .projects-deck .slide{ flex:initial; height: clamp(300px, 65vw, 420px); }
+  .projects-deck .nav{ display:none; }
+}
+
+
+/* Center SVG arrows perfectly inside circular buttons */
+.projects-deck .arrow{
+  width: 44px; height: 44px;            /* slightly bigger tap target */
+  display: flex; align-items: center; justify-content: center;
+  line-height: 0;                        /* no glyph baseline weirdness */
+  border-radius: 999px;
+  background: rgba(255,255,255,.95);
+  border: 1px solid var(--border);
+  color: #000;
+}
+.projects-deck .arrow svg{
+  width: 20px; height: 20px; display: block;
+}
+
+/* Anchor the content panel to the BOTTOM of each banner */
+.projects-deck .panel{
+  top: auto !important;
+  bottom: 16px;                          /* was top:16px */
+}
+
+/* Stronger bottom readability fade since content sits at bottom now */
+.projects-deck .slide::after{
+  background:
+    linear-gradient(to top, rgba(0,0,0,.42), rgba(0,0,0,.22) 24%, transparent 58%);
+}
+
+
+
+.projects-deck .slides{
+  height: clamp(var(--banner-h-min), var(--banner-h-fluid), var(--banner-h-max));
+}
+
+
+
+
+
+
+
+
+
+
+/* ===== Let's Connect ===== */
+.connect{
+  background:#fff; border:1px solid var(--border);
+  border-radius:16px; padding:24px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+.connect .connect-head{ text-align:center; margin-bottom:12px; }
+.connect .connect-tagline{ max-width:70ch; margin:6px auto 0; color:#444; }
+
+.connect .connect-wrap{
+  display:grid; gap:16px;
+  align-items:center; justify-items:center;
+}
+
+@media (min-width: 900px){
+  .connect .connect-wrap{
+    grid-template-columns: 1fr 1fr;  /* QR | Info side-by-side */
+    gap:24px;
+    justify-items:stretch;
+  }
+}
+
+/* QR card */
+.qr-box{
+  background:#fff; border:1px solid var(--border);
+  border-radius:12px; padding:16px;
+  display:grid; place-items:center; text-align:center;
+}
+.qr-box .hint{ margin:8px 0 0; color:#666; font-size:0.95rem; }
+
+/* Info card */
+.info-box{ width:100%; max-width:520px; }
+.info-box .name{ margin:0 0 6px 0; }
+.contact-list{
+  list-style:none; padding:0; margin:0 0 10px 0;
+}
+.contact-list li{ margin:4px 0; }
+.contact-list a{ text-decoration:none; }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Make the QR a bit smaller on tiny phones, bigger on desktops */
+@media (max-width: 420px){
+  #qrCanvas{ width: 220px; height: 220px; }
+}
+@media (min-width: 1100px){
+  #qrCanvas{ width: 280px; height: 280px; }
+}
+
+
+
+
+
+
+/* ===== Skills & Experience ===== */
+.skillsxp .skills-head{
+  text-align:center;
+  margin-bottom:12px;
+}
+.skillsxp .skills-tagline{
+  max-width:70ch; margin:6px auto 0; color:#444;
+}
+
+/* Layout */
+.skillsxp .skills-wrap{
+  display:grid; gap:20px;
+}
+@media (min-width: 960px){
+  .skillsxp .skills-wrap{
+    grid-template-columns: 1.2fr 1fr; /* left a bit wider */
+    gap:28px;
+  }
+}
+
+.subhead{ margin:0 0 8px; font-weight:700; }
+.submini{ margin:8px 0 6px; font-weight:700; font-size:1rem; }
+.mt12{ margin-top:12px; }
+.mt16{ margin-top:16px; }
+
+/* Meters (no animation) */
+.meter{
+  --val: 80%;
+  background:#fafafa;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px;
+  margin:10px 0;
+}
+.meter-bar{
+  height:10px;
+  background: color-mix(in srgb, var(--brand) 85%, #fff 15%);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:999px;
+  width: var(--val);
+}
+.meter-label{
+  display:flex; align-items:center; gap:10px; justify-content:space-between;
+  margin-top:8px; flex-wrap:wrap;
+}
+.meter-label strong{ font-weight:700; }
+.meter-label em{ font-style:normal; color:#666; }
+.meter-label b{ font-weight:800; }
+
+/* Toolbelt & Domains pills */
+.pill.toolbelt, .pill.domains{ gap:8px; }
+.pill li{
+  background:#fff; border:1px solid var(--border);
+  border-radius:999px; padding:6px 10px; font-weight:600;
+}
+
+/* Experience Snapshot (right col) */
+.xp-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:10px;
+  margin:6px 0 12px;
+}
+.xp-card{
+  background:#fff; border:1px solid var(--border);
+  border-radius:12px; padding:12px; text-align:center;
+}
+.xp-card .num{ display:block; font-weight:800; font-size:1.15rem; }
+.xp-card small{ color:var(--muted); }
+
+/* Certification callout (simple, no pattern) */
+.cred{
+  display:flex; gap:10px; align-items:center;
+  background:#fff; border:1px solid var(--border);
+  border-radius:12px; padding:12px; margin-top:4px;
+}
+.cred-icon{
+  width:36px; height:36px; border-radius:999px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,0.7); color:#000;
+  border:1px solid rgba(0,0,0,0.06);
+}
+.cred-icon svg{ width:20px; height:20px; }
+.cred-text h4{ margin:0 0 2px 0; }
+.cred-text p{ margin:0; }
+
+/* Optional: white frame for entire section (opt-in) */
+/*
+.skillsxp{
+  background:#fff; border:1px solid var(--border);
+  border-radius:16px; padding:24px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+*/
+
+/* Skills & Experience — white card surface */
+.skillsxp{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+
+/* Optional: a touch more space on wide screens */
+@media (min-width: 1000px){
+  .skillsxp{ padding:28px; }
+}
+
+
+/* ---- Connect: transparent + centered stack ---- */
+
+/* remove white card look (even if .frame was present) */
+.connect{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0; /* rely on .section spacing; change to 16–24px if you want more space */
+}
+
+/* center the heading + description */
+.connect .connect-head{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.connect .connect-tagline{
+  max-width: 70ch;
+  margin: 6px auto 0;
+}
+
+/* force single-column layout on all screen sizes, centered */
+.connect .connect-wrap{
+  display: grid;
+  grid-template-columns: 1fr;       /* always one column */
+  gap: 12px;
+  justify-items: center;            /* center children */
+  text-align: center;               /* center text inside */
+}
+
+/* make QR box flat & centered */
+.qr-box{
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* contact details centered below QR */
+.info-box{
+  max-width: 520px;
+  width: 100%;
+}
+.contact-list{
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 10px;
+}
+.contact-list li{ margin: 4px 0; }
+.contact-list a{
+  text-decoration: none;
+}
+
+/* center the buttons (e.g., Save contact) */
+.actions{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* adjust QR size responsively (optional) */
+#qrCanvas{ width: 260px; height: 260px; }
+@media (max-width: 420px){
+  #qrCanvas{ width: 220px; height: 220px; }
+}
+@media (min-width: 1100px){
+  #qrCanvas{ width: 280px; height: 280px; }
+}
+
+
+
+
+
+
+
+/* Panels are tappable like links */
+.projects-deck .panel[role="link"]{
+  cursor: pointer;
+}
+
+/* Keyboard focus outline for accessibility */
+.projects-deck .panel[role="link"]:focus-visible{
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+/* Core Skill meters: title → bar → years/% row */
+.meter{
+  --val: 80%;
+  background:#fafafa;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  display:grid;
+  grid-template-rows: auto 12px auto; /* title, bar, info row */
+  row-gap:8px;
+}
+
+.meter-title{
+  font-weight:700;
+  line-height:1.2;
+  margin:0;          /* keep it tight */
+}
+
+/* Track + fill */
+.meter-bar{
+  position:relative;
+  background:#eee;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:999px;
+  overflow:hidden;
+}
+.meter-bar::before{
+  content:"";
+  position:absolute; inset:0;
+  width: var(--val);              /* fill width from --val */
+  height:100%;
+  background: color-mix(in srgb, var(--brand) 85%, #fff 15%);
+}
+
+/* Bottom row: years left, % right */
+.meter-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.meter-row em{
+  font-style:normal;
+  color:#666;
+}
+.meter-row b{
+  margin-left:auto;              /* push the % to the right */
+  font-weight:800;
+}
+
+
+
+/* === Fix mobile overlap in Featured Projects === */
+@media (max-width: 759.98px){
+  /* ensure the full-bleed wrapper stops doing the viewport trick on mobile */
+  .projects-deck .full-bleed{ left:auto; right:auto; margin:0; width:auto; }
+
+  /* stage uses natural height; no hidden overflow */
+  .projects-deck .slides{ height:auto; overflow:visible; }
+
+  /* stack slides (you likely already have this) */
+  .projects-deck .track{
+    display:grid; grid-template-columns: 1fr; gap:12px;
+    transform:none !important;
+  }
+
+  /* let each slide grow with its content */
+  .projects-deck .slide{
+    flex: initial;
+    height: auto;                 /* key change */
+    background: #000;
+  }
+
+  /* make the image a normal block at top */
+  .projects-deck .slide .bg{
+    position: relative;           /* was absolute */
+    width: 100%; 
+    height: auto;                 /* image sets its own height */
+    display: block;
+  }
+
+  /* put the panel UNDER the image (not overlay), full width of inner container */
+  .projects-deck .panel{
+    position: static !important;  /* was absolute */
+    margin: 8px 16px 0;
+    background: #fff;             /* readable on mobile */
+    color: #111;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+
+  /* remove the overlay fade (not needed now) */
+  .projects-deck .slide::after{ background: none; }
+
+  /* arrows are hidden on mobile already; keep it that way */
+  .projects-deck .nav{ display: none !important; }
+}
+
+/* (Optional safety) keep the Skills section above any leftover absolute bits */
+@media (max-width: 759.98px){
+  #skills.section.skillsxp{ position: relative; z-index: 1; }
+}
+
+
+
+
+/* Sticky header with a soft shadow */
+.site-header{
+  position: sticky;   /* if it's already sticky, this is fine to repeat */
+  top: 0;
+  z-index: 1000;      /* stays above hero/video */
+  background: #fff;   /* solid background so the shadow reads well */
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  border-bottom: none;  /* remove any thin border if you had one */
+}
+
+
+
+
+/* Make the header content stretch so links fill the bar height */
+.site-header .container{ align-items: stretch; }           /* ensures full-height row */
+.nav-desktop{ align-items: stretch; }
+.nav-desktop a{ display:flex; align-items:center; }
+
+/* Tell the active pill to cover the header padding + the 1px border */
+:root{ --header-pad-y: 24px; --header-border: 1px; }       /* you already use --header-pad-y */
+
+.nav-desktop a.active{
+  color:#000; font-weight:700; position:relative;
+}
+.nav-desktop a.active::before{
+  content:"";
+  position:absolute;
+  left: 0;              /* exactly the link’s width */
+  right: 0;
+  top:    calc(-1 * var(--header-pad-y) - var(--header-border));
+  bottom: calc(-1 * var(--header-pad-y) - var(--header-border));
+  background: var(--brand);
+  border-radius: 0;     /* remove rounded gaps at the edges */
+  z-index: -1;
+}
+
+
+
+
+/* Bigger section titles (H2s across the site) */
+:root{
+  /* tweak these three numbers to taste */
+  --h2-min: 2.2rem;   /* ~35px on small screens */
+  --h2-fluid: 3.2vw;  /* fluid growth */
+  --h2-max: 3.25rem;  /* ~52px cap on large screens */
+}
+
+.section h2,
+h2.section-title,
+.about .about-head h2,
+.experience .exp-head h2,
+.projects-deck .projects-head h2,
+.projects .projects-head h2,
+.skillsxp .skills-head h2,
+.connect .connect-head h2{
+  font-size: clamp(var(--h2-min), var(--h2-fluid), var(--h2-max));
+  line-height: 1.12;
+  font-weight: 800; /* Roboto Slab looks great bold */
+  margin: 0 0 6px 0; /* keep gap tight above taglines */
+}
+
+/* (Optional) keep taglines snug under the larger titles */
+.about .tagline,
+.exp-tagline,
+.projects-tagline,
+.skills-tagline,
+.connect-tagline{
+  margin-top: 6px;
+}
+
+
+
+/* (Already in your CSS, but include if missing) */
+.panel-cta-wrap{ position:absolute; inset:0; display:flex; padding:16px; pointer-events:none; }
+.panel-cta-center{ align-items:center; justify-content:center; }
+.panel-cta{
+  pointer-events:auto; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 18px; min-height:44px; border-radius:12px;
+  background: var(--brand, #FFE500); color:#111; font-weight:800; text-decoration:none;
+  border:1px solid rgba(0,0,0,.08); box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+
+
+
