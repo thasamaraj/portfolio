@@ -1833,3 +1833,32 @@ h2.section-title,
     justify-content: center;
   }
 }
+
+
+
+/* Desktop: left-align Quick facts */
+@media (min-width: 760px){
+  .hero-banner .meta-list{
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+  .hero-banner .meta-list li{
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
+
+/* Mobile: center Quick facts (keeps your previous behavior) */
+@media (max-width: 759.98px){
+  .hero-banner .meta-list{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .hero-banner .meta-list li{
+    justify-content: center;
+  }
+}
