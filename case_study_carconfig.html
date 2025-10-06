@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study — Car Configurator</title>
+
+  <!-- Roboto Slab to match your site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./CSS/case_study.css" />
+</head>
+<body>
+
+  <!-- FULL-WIDTH HERO (no header on this page) -->
+  <section class="hero" aria-label="Hero image">
+    <!-- swap this path to your banner image -->
+    <img src="./images/Carconf_title.png" alt="Car configurator hero">
+    <div class="scrim" aria-hidden="true"></div>
+  </section>
+
+  <!-- OVERLAPPING CENTERED CONTAINER (1024px) -->
+  <section class="sheet">
+
+
+    <header class="summary">
+      <!-- Back button (top-left) -->
+      <a class="backlink" href="index.html#projects" aria-label="Back to Featured Projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Back to Projects</span>
+      </a>
+    
+      <!-- Title -->
+      <h1>AI-Assisted Car Configurator</h1>
+    
+      <p class="intro">
+        Redefining how users explore, personalize, and experience car ownership…
+      </p>
+
+
+      <!-- Compact snapshot strip (one row on desktop) -->
+<div class="meta-strip" role="list">
+  <div class="mini-card" role="listitem">
+    <span class="label">Role</span>
+    <span class="value">Senior UX Designer</span>
+  </div>
+  <div class="mini-card" role="listitem">
+    <span class="label">Scope</span>
+    <span class="value">Research, flows, concept, prototype</span>
+  </div>
+  <div class="mini-card" role="listitem">
+    <span class="label">Time</span>
+    <span class="value">8–10 weeks</span>
+  </div>
+  <div class="mini-card" role="listitem">
+    <span class="label">Constraints</span>
+    <span class="value">No prod build · tight team</span>
+  </div>
+</div>
+
+</header>
+
+</section>
+
+
+
+
+
+<!-- CONTEXT & GOAL (center 1024, two columns) -->
+<section class="ctx-goal" aria-labelledby="ctx-title">
+  <div class="ctx-inner">
+    <!-- LEFT: content -->
+    <div class="ctx-copy">
+      <div class="kicker">Context &amp; Goal</div>
+      <h2 id="ctx-title">What we aimed to prove</h2>
+      <p>
+        Validate a <strong>simpler, AI-assisted configuration</strong> that reduces decision fatigue
+        and creates an emotional “see-my-car-in-my-world” moment.
+      </p>
+
+      <div class="call">
+        <strong>Success proxy:</strong> positive usability signals on flow clarity and
+        “try-on/backdrop” desirability; stakeholder alignment for pilot.
+      </div>
+    </div>
+
+    <!-- RIGHT: image -->
+    <div class="ctx-media">
+      <!-- Replace src with your actual screen image -->
+      <img src="./images/case-context-screen.jpg" alt="Configuration flow screen">
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- RESEARCH (center 1024, white card) -->
+<section class="research" aria-labelledby="research-title">
+  <div class="research-inner">
+    <div class="kicker">Research (Focused)</div>
+    <h2 id="research-title">How we learned fast</h2>
+
+    <ul class="list-tight research-points">
+      <li>Reviewed leading configurators (BMW, Audi, Totem) to spot <strong>gaps in lifestyle visualization</strong>.</li>
+      <li>Lightweight user conversations with car shoppers &amp; showroom staff → <strong>friction themes</strong>.</li>
+      <li>Artifact audit of current assets &amp; tech feasibility with team.</li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- KEY PAIN POINTS (center 1024, white card) -->
+<section class="pain" aria-labelledby="pain-title">
+  <div class="pain-inner">
+    <div class="kicker">Key Pain Points</div>
+    <h2 id="pain-title">What gets in the way</h2>
+
+    <ul class="list-tight pain-points">
+      <li><strong>Option overload:</strong> too many trims/specs to compare.</li>
+      <li><strong>Low imagination support:</strong> hard to picture the car in personal context.</li>
+      <li><strong>Channel break:</strong> showroom → mobile handoff is weak.</li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+<!-- USER FLOW (center 1024, white card, two columns) -->
+<section class="flow" aria-labelledby="flow-title">
+  <div class="flow-inner">
+    <div class="kicker">User Flow</div>
+
+    <div class="two">
+      <!-- LEFT: content -->
+      <div class="flow-copy">
+        <h2 id="flow-title">Shortest path to confidence</h2>
+        <ol class="list-tight flow-steps">
+          <li>Prompt (e.g., “SUV for weekend family trips”).</li>
+          <li>AI proposes model + reasons <span class="muted">(explainable panel)</span>.</li>
+          <li>Quick edit: exterior / interior essentials.</li>
+          <li>Experience: <strong>Try-On</strong> or <strong>Backdrop Magic</strong>.</li>
+          <li>Save → QR → continue on mobile.</li>
+        </ol>
+      </div>
+<br>
+    <!-- RIGHT: flow diagram carousel -->
+<div class="flow-carousel">
+  <div class="flow-viewport">
+    <ul class="flow-track">
+      <!-- Slide 1 -->
+      <li class="flow-slide">
+        <img src="./images/flow-diagram-1.jpg" alt="Flow step 1 — Prompt and goals" />
+      </li>
+      <!-- Slide 2 -->
+      <li class="flow-slide">
+        <img src="./images/flow-diagram-2.jpg" alt="Flow step 2 — AI proposes model with reasons" />
+      </li>
+      <!-- Slide 3 -->
+      <li class="flow-slide">
+        <img src="./images/flow-diagram-3.jpg" alt="Flow step 3 — Quick edits to essentials" />
+      </li>
+      <!-- Slide 4 -->
+      <li class="flow-slide">
+        <img src="./images/flow-diagram-4.jpg" alt="Flow step 4 — Try-On or Backdrop Magic" />
+      </li>
+      <!-- Slide 5 -->
+      <li class="flow-slide">
+        <img src="./images/flow-diagram-5.jpg" alt="Flow step 5 — Save, QR, continue on mobile" />
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nav arrows -->
+  <button class="flow-arrow prev" type="button" aria-label="Previous" disabled>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="flow-arrow next" type="button" aria-label="Next">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- CONCEPT SKETCHES (center 1024, white card, horizontal strip + lightbox) -->
+<section class="sketches" aria-labelledby="sketches-title">
+  <div class="sketches-inner">
+    <div class="kicker">Concept Sketches</div>
+    <h2 id="sketches-title">We sketched to align fast</h2>
+
+    <!-- Horizontal thumbnail strip -->
+    <div class="sketch-strip" data-gallery="sketches">
+      <!-- Each .sketch is a button with a thumb; use data-full for the large image -->
+      <button class="sketch" role="listitem" data-full="./images/sketch-1-lg.jpg">
+        <img src="./images/sketch-1.jpg" alt="Prompt screen sketch">
+      </button>
+      <button class="sketch" role="listitem" data-full="./images/sketch-2-lg.jpg">
+        <img src="./images/sketch-2.jpg" alt="AI picks with reasons sketch">
+      </button>
+      <button class="sketch" role="listitem" data-full="./images/sketch-3-lg.jpg">
+        <img src="./images/sketch-3.jpg" alt="Quick edit essentials sketch">
+      </button>
+      <button class="sketch" role="listitem" data-full="./images/sketch-4-lg.jpg">
+        <img src="./images/sketch-4.jpg" alt="Try-On / Backdrop Magic sketch">
+      </button>
+      <button class="sketch" role="listitem" data-full="./images/sketch-5-lg.jpg">
+        <img src="./images/sketch-5.jpg" alt="Save, QR, continue on mobile sketch">
+      </button>
+      <!-- Add more if you have them -->
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox (one per page is fine) -->
+<div class="sketch-lightbox" id="lightbox-sketches" aria-hidden="true">
+  <button class="lb-bg" aria-label="Close"></button>
+
+  <figure class="lb-dialog" role="dialog" aria-modal="true" aria-labelledby="lb-caption">
+    <img class="lb-img" src="" alt="">
+    <figcaption class="lb-caption" id="lb-caption"></figcaption>
+
+    <button class="lb-close" aria-label="Close">×</button>
+
+    <button class="lb-arrow prev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4l-8 8 8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="lb-arrow next" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </figure>
+</div>
+
+
+
+
+
+<!-- DESIGN DECISIONS (center 1024, white card) -->
+<section class="decisions" aria-labelledby="decisions-title">
+  <div class="decisions-inner">
+    <div class="kicker">Design Decisions</div>
+    <h2 id="decisions-title">What we chose (and why)</h2>
+
+    <div class="decisions-grid">
+      <article class="decision-card">
+        <div class="d-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3a7 7 0 0 0-7 7c0 2.5 1.3 4.7 3.3 6l.2.2V19a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-2.8l.2-.2A7 7 0 0 0 12 3z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 22h6" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>AI first entry</h3>
+        <p>Prompt trims choices → reduces initial cognitive load.</p>
+      </article>
+
+      <article class="decision-card">
+        <div class="d-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 12h5m0 0l-2-2m2 2l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Explainable recommendations</h3>
+        <p>“Why this model &amp; package” increases trust.</p>
+      </article>
+
+      <article class="decision-card">
+        <div class="d-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 7h18M3 17h18" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Experience as proof</h3>
+        <p>Try-On / Backdrop Magic to create emotional fit quickly.</p>
+      </article>
+
+      <article class="decision-card">
+        <div class="d-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 12h9" stroke="currentColor" stroke-width="2"/><path d="M11 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Handoff</h3>
+        <p>QR → mobile to keep momentum post-showroom.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- OUTCOMES & NEXT (center 1024, white card) -->
+<section class="outcomes" aria-labelledby="outcomes-title">
+  <div class="outcomes-inner">
+    <div class="kicker">Outcomes &amp; Next</div>
+    <h2 id="outcomes-title">What moved &amp; what’s next</h2>
+
+    <ul class="list-tight outcomes-list">
+      <li>Stakeholders aligned on <strong>AI-assisted flow</strong> and <strong>experience layer</strong> value.</li>
+      <li>Prototype validated core desirability in quick tests.</li>
+      <li><strong>Next:</strong> expand test set, add analytics, refine explainability &amp; accessibility, pilot in one showroom.</li>
+    </ul>
+  </div>
+</section>
+
+
+<br><br>
+
+<a class="fab-home" href="index.html#home" aria-label="Back to Home">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M3 11.5L12 4l9 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M5 10.5V20h5v-5h4v5h5v-9.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
+
+
+<script src="./js/flow-carousel.js" defer></script>
+<script src="./js/sketches-gallery.js" defer></script>
+
+
+
+</body>
+</html>
