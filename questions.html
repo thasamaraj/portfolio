@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help me choose the best car</title>
+  <link rel="stylesheet" href="./css/form_style.css" />
+</head>
+<body>
+  <!-- Screen 1: Landing -->
+  <div class="page" id="landing">
+    <header>
+      <a href="#" class="logo">CarGenie</a>
+      <div class="profile" aria-label="Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20c1.8-3.4 5-5 8-5s6.2 1.6 8 5"/>
+        </svg>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="content">
+        <h1>Help me choose the best car</h1>
+        <p class="sub">Answer a few quick questions and we’ll narrow down the perfect match for your needs—budget, space, mileage, and tech features.</p>
+        <a href="#" class="cta" id="startBtn">Get Started</a>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> CarGenie • All rights reserved</footer>
+  </div>
+
+  <!-- Screens 2..n: Flow -->
+  <section class="flow" id="flow" aria-live="polite">
+    <div class="flow-wrap">
+      <!-- Left 65% Visual -->
+      <aside class="visual">
+        <div class="visual-inner" id="visualInner">
+          <div class="step-badge" id="stepBadge">Step 1 of 4</div>
+        </div>
+      </aside>
+
+      <!-- Right 35% Panel -->
+      <div class="panel" role="group" aria-labelledby="qTitle">
+        <div class="panel-head">
+          <div class="progress" aria-label="Progress">
+            <div class="dash" id="pg0"></div>
+            <div class="dash" id="pg1"></div>
+            <div class="dash" id="pg2"></div>
+            <div class="dash" id="pg3"></div>
+          </div>
+          <div class="tools">
+            <button class="back" id="backBtn" aria-label="Go back">← Back</button>
+          </div>
+        </div>
+
+        <!-- FORM VIEW (wrapped) -->
+        <div id="formView">
+          <div class="q">
+            <h2 id="qTitle">What style of vehicle are you looking for?</h2>
+          </div>
+
+          <div id="options"></div>
+
+          <div class="panel-foot">
+            <button class="next" id="nextBtn" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- RESULTS VIEW -->
+        <div class="results" id="results" hidden>
+          <div class="result-head">
+            <h2 style="margin:0 0 6px">Your top matches</h2>
+            <p style="margin:0;color:#b9c7e6">Based on your choices, these two fit you best.</p>
+          </div>
+          <div class="result-grid" id="resultGrid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./js/form_question.js"></script>
+</body>
+</html>
