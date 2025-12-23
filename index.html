@@ -35,7 +35,7 @@
       <!-- Desktop nav -->
       <nav class="nav nav-desktop" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
@@ -46,7 +46,7 @@
         <summary aria-label="Open menu">Menu</summary>
         <nav class="sheet" aria-label="Primary mobile">
           <a href="#home">Home</a>
-          <a href="#about">About</a>
+          <a href="#about">About Me</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
@@ -130,10 +130,10 @@
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- PROJECTS -->
     <section id="projects" class="section projects">
       <div class="projects-head">
-        <h2>Featured Projects</h2>
+        <h2>Projects</h2>
       </div>
 
       <div class="projects-stack">
@@ -278,7 +278,7 @@
     <!-- CONTACT -->
     <section id="contact" class="section connect" aria-labelledby="connect-title">
       <div class="connect-head">
-        <h2 id="connect-title">Let’s Connect</h2>
+        <h2 id="connect-title">Contact</h2>
         <p class="connect-tagline">Scan the QR to save my contact—or tap the button on mobile.</p>
       </div>
 
@@ -322,33 +322,48 @@
 
   <!-- Scripts -->
   <script>
-    // nav scroll spy (stable)
-    (function(){
-      const links = [...document.querySelectorAll('.nav-desktop a, .nav-mobile .sheet a')];
-      const ids = links.map(a => a.getAttribute('href')).filter(h => h && h.startsWith('#')).map(h => h.slice(1));
-      const secs = ids.map(id => document.getElementById(id)).filter(Boolean);
-      const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 68;
-
-      function setActive(id){
+    (function () {
+      const headerH =
+        parseInt(
+          getComputedStyle(document.documentElement)
+            .getPropertyValue("--header-h")
+        ) || 72;
+    
+      const links = document.querySelectorAll(
+        ".nav-desktop a, .nav-mobile .sheet a"
+      );
+    
+      const sections = [...links]
+        .map(a => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
+    
+      function setActive(id) {
         links.forEach(a => {
-          const on = a.getAttribute('href') === '#' + id;
-          a.classList.toggle('active', on);
-          a.setAttribute('aria-current', on ? 'page' : 'false');
+          const active = a.getAttribute("href") === "#" + id;
+          a.classList.toggle("active", active);
+          a.setAttribute("aria-current", active ? "page" : "false");
         });
       }
-      function onScroll(){
-        const y = window.scrollY + headerH + 4;
-        let current = secs[0]?.id;
-        for (const sec of secs){
-          if (sec.offsetTop <= y) current = sec.id; else break;
+    
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setActive(entry.target.id);
+            }
+          });
+        },
+        {
+          rootMargin: `-${headerH + 8}px 0px -60% 0px`,
+          threshold: 0
         }
-        if (current) setActive(current);
-      }
-      window.addEventListener('scroll', onScroll, { passive:true });
-      window.addEventListener('resize', onScroll);
-      onScroll();
+      );
+    
+      sections.forEach(section => observer.observe(section));
     })();
-  </script>
+    </script>
+    
+
 
   <script>
     // mobile menu: close on tap + lock scroll
