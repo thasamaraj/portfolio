@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <!-- Roboto Slab -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  
+
+<body style="background: #f5f5f5;">
+
+  <div id="header"></div>
+
+<main class="about-section">
+  <div class="about-container">
+
+    <!-- LEFT CONTENT (65%) -->
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>HFI - Certified Usability Analyst |  Chennai, India |  20+ Years Experience</p>
+
+      <h2>Summary</h2>
+
+      <p>
+        My career spans over 25 years, evolving from graphic design to development and ultimately UX leadership. This journey has shaped how I think- always balancing creativity with usability and business goals. I've spent 5 years working in the USA, where I gained global exposure and learned to design for diverse users and cultures. Today, I focus on mentoring designers, nurturing creativity, and leading UX strategies that turn complex systems into simple, human-centered experiences.
+      </p>
+
+      <p>
+        I believe great design is not just about interfaces-it's about clarity, empathy, and measurable impact.
+      </p>
+
+      <br>
+
+      <h1>Beyond Work</h1>
+      <p class="bw-intro">
+        A glimpse into what keeps me inspired outside of my professional life.
+      </p>
+
+    
+      <div class="bw-grid">
+
+        <div class="bw-card" onclick="openGallery('wood',0)">
+          <img src="assets/images/woodwork.png">
+          <h2>Woodworking</h2>
+        </div>
+      
+        <div class="bw-card" onclick="openGallery('dogs',0)">
+          <img src="assets/images/german-shepherd.jpg">
+          <h2>My German Shepherds</h2>
+        </div>
+      
+        <div class="bw-card" onclick="openGallery('birds',0)">
+          <img src="assets/images/aviary.jpg">
+          <h2>Mini Aviary</h2>
+        </div>
+    
+      
+        <div class="bw-card" onclick="openGallery('craft',0)">
+          <img src="assets/images/coconut-craft.jpg">
+          <h2>Handmade Crafts</h2>
+        </div>
+      
+      </div>
+
+
+
+    </div>
+
+    <!-- RIGHT IMAGE (35%) -->
+    <div class="about-image-wrapper">
+      <div class="about-avatar">
+        <img src="assets/images/Joseph_Avathar_new.png" alt="Joseph portrait">
+      </div>      
+    </div>
+
+  </div>
+</main>
+
+
+
+
+  
+<div id="footer"></div>
+
+
+
+
+
+  
+<script src="assets/js/main.js"></script>  
+
+
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeGallery()">×</span>
+  <img id="lightbox-img">
+  <span class="prev" onclick="prevImage()">❮</span>
+  <span class="next" onclick="nextImage()">❯</span>
+</div>
+
+
+</body>
+</html>
